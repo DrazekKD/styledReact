@@ -45,11 +45,11 @@
 			"pre-commit": "lint-stage"
 		}
 	},
-  "lint-staged": {
-    "*.js": [
-		"prettier --config .prettierrc --write",
-		"eslint --fix",
-		"git add"
-	]
-  }
+	"lint-staged": {
+		"*.js": [
+			"prettier --config .prettierrc --write",
+			"eslint --fix",
+			"git add"
+		]
+	}
 }
