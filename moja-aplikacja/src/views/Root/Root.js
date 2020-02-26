@@ -1,5 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
+import GlobalStyle from 'theme/GlobalStyles';
 
 const Title = styled.h1`
   font-size: 1.5em;
@@ -7,8 +8,11 @@ const Title = styled.h1`
   color: palevioletred;
 `;
 
-function Root() {
-  return <Title>HELOO</Title>;
-}
+const Root = () => (
+  <>
+    <GlobalStyle />
+    <Title>Wszystko gra</Title>
+  </>
+);
 
 export default Root;
