@@ -1,6 +1,5 @@
 import React from 'react';
 import styled from 'styled-components';
-import './App.css';
 
 const Title = styled.h1`
   font-size: 1.5em;
@@ -8,12 +7,8 @@ const Title = styled.h1`
   color: palevioletred;
 `;
 
-function App() {
-  return (
-    <div className="App">
-      <Title>HELOO</Title>
-    </div>
-  );
+function Root() {
+  return <Title>HELOO</Title>;
 }
 
-export default App;
+export default Root;
