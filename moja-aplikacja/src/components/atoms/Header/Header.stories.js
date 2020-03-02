@@ -7,7 +7,11 @@ export default {
   decorators: [withKnobs],
 };
 
-export const h1 = () => <Header level={1}>H1</Header>;
+export const h1 = () => (
+  <Header level={1} typeStyle="BIG">
+    H1
+  </Header>
+);
 export const h2 = () => <Header level={2}>H2</Header>;
 export const h3 = () => <Header level={3}>H3</Header>;
 export const h4 = () => <Header level={4}>H4</Header>;
