@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import styled, { css } from 'styled-components';
 import Paragraph from '../../atoms/Paragraph/Paragraph';
 import Header from '../../atoms/Header/Header';
@@ -15,8 +16,7 @@ const StyledWrapper = styled.div`
 
 const InnerWrapper = styled.div`
   padding: 17px 30px;
-  background-color: ${({ yellow, theme }) => (yellow ? theme.notes : 'white')};
-
+  background-color: ${({ cardType, theme }) => (cardType ? theme[cardType] : 'white')};
   ${({ flex }) =>
     flex &&
     css`
@@ -36,9 +36,9 @@ const StyledHeading = styled(Header)`
   margin: 5px 0 0;
 `;
 
-const Card = () => (
+const Card = ({ cardType }) => (
   <StyledWrapper>
-    <InnerWrapper yellow>
+    <InnerWrapper cardType={cardType}>
       <StyledHeading level={2} typeStyle="BIG">
         Hello Ja
       </StyledHeading>
@@ -53,5 +53,9 @@ const Card = () => (
     </InnerWrapper>
   </StyledWrapper>
 );
+
+Card.propTypes = {
+  cardType: PropTypes.oneOf(['notes', 'twitters', 'articles']).isRequired,
+};
 
 export default Card;
