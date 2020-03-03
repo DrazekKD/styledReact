@@ -16,7 +16,7 @@ const GlobalStyle = createGlobalStyle`
   
   body{
     font-size: 1.6rem;
-    font-family: "Montserrat";
+    font-family: "Montserrat",serif;
   } 
 `;
 
