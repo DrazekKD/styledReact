@@ -15,8 +15,13 @@ const StyledWrapper = styled.div`
 `;
 
 const InnerWrapper = styled.div`
+  position: relative;
   padding: 17px 30px;
   background-color: ${({ cardType, theme }) => (cardType ? theme[cardType] : 'white')};
+
+  :first-of-type {
+    z-index: 999;
+  }
   ${({ flex }) =>
     flex &&
     css`
@@ -36,6 +41,29 @@ const StyledHeading = styled(Header)`
   margin: 5px 0 0;
 `;
 
+const StyledAvatar = styled.img`
+  width: 87px;
+  height: 87px;
+  border-radius: 50%;
+  border: 5px solid ${({ theme }) => theme.twitters};
+  position: absolute;
+  top: 25px;
+  right: 25px;
+`;
+
+const StyledLinkButton = styled.a`
+  display: block;
+  position: absolute;
+  width: 47px;
+  height: 47px;
+  border-radius: 50px;
+  background-size: 60%;
+  background: white url(${({ img }) => img}) no-repeat 50%;
+  top: 50%;
+  right: 25px;
+  transform: translateY(-50%);
+`;
+
 const Card = ({ cardType }) => (
   <StyledWrapper>
     <InnerWrapper cardType={cardType}>
@@ -43,6 +71,8 @@ const Card = ({ cardType }) => (
         Hello Ja
       </StyledHeading>
       <DateInfo>3 day</DateInfo>
+      {cardType === 'twitters' && <StyledAvatar src="https://avatars.io/twitter/Apple" />}
+      {cardType === 'articles' && <StyledLinkButton />}
     </InnerWrapper>
     <InnerWrapper flex>
       <Paragraph>
